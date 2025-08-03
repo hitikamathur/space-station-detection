@@ -1,0 +1,91 @@
+# requirements.txt
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+torch>=2.0.0
+torchvision>=0.15.0
+psutil>=5.9.0
+sqlite3
+
+# For Windows users (optional)
+# pywin32>=306
+# winshell>=0.6
+
+# setup.py
+from setuptools import setup, find_packages
+
+setup(
+    name="space-station-detection",
+    version="2.0.0",
+    description="AI-Powered Space Station Object Detection System",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    author="Your Team Name",
+    author_email="team@yourproject.com",
+    packages=find_packages(),
+    install_requires=[
+        "ultralytics>=8.0.0",
+        "opencv-python>=4.8.0",
+        "Pillow>=10.0.0",
+        "matplotlib>=3.7.0",
+        "numpy>=1.24.0",
+        "torch>=2.0.0",
+        "torchvision>=0.15.0",
+    ],
+    python_requires=">=3.8",
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
+    entry_points={
+        "console_scripts": [
+            "space-station-detection=space_station_app:main",
+        ],
+    },
+)
+
+# README.md
+# 🚀 Space Station Object Detection System
+
+## Quick Start
+1. Install dependencies: `pip install -r requirements.txt`
+2. Place your trained `model.pt` in the project directory
+3. Run the application: `python space_station_app.py`
+4. Load test images or start camera feed for detection
+
+## Features
+- Real-time object detection for space station equipment
+- Automated monitoring and logging
+- Falcon platform integration for model updates
+- Professional space-themed interface
+- Export capabilities for data analysis
+
+## System Requirements
+- Python 3.8+
+- 8GB RAM (16GB recommended)
+- GPU with 4GB VRAM (optional)
+- Windows 10/11, macOS 10.14+, or Linux Ubuntu 18.04+
+
+## Model Files
+Ensure your trained model (`model.pt`) is in the root directory for automatic loading.
+
+## Documentation
+See `Space_Station_Detection_Proposal.pdf` for complete technical documentation and Falcon integration details.
+
+# run_app.bat (Windows launcher)
+@echo off
+echo Starting Space Station Object Detection System...
+python space_station_app.py
+pause
+
+# run_app.sh (Linux/Mac launcher)
+#!/bin/bash
+echo "Starting Space Station Object Detection System..."
+python3 space_station_app.py

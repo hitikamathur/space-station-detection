@@ -1,0 +1,91 @@
+REM run_app.bat - Windows Launcher
+@echo off
+title Space Station Object Detection System
+color 0B
+
+echo.
+echo     =========================================
+echo     🚀 SPACE STATION DETECTION SYSTEM 🚀
+echo     =========================================
+echo.
+echo     Initializing system...
+echo.
+
+REM Check if Python is installed
+python --version >nul 2>&1
+if errorlevel 1 (
+    echo ❌ Python is not installed or not in PATH
+    echo    Please install Python 3.8+ from python.org
+    pause
+    exit /b 1
+)
+
+REM Check if launch script exists
+if not exist "launch_app.py" (
+    echo ❌ launch_app.py not found in current directory
+    pause
+    exit /b 1
+)
+
+REM Run the launcher
+echo     Starting application launcher...
+python launch_app.py
+
+if errorlevel 1 (
+    echo.
+    echo ❌ Application failed to start
+    echo    Check the error messages above
+    pause
+) else (
+    echo.
+    echo 👋 Application closed successfully
+)
+
+exit /b 0
+
+REM ============================================
+
+REM install_requirements.bat - Dependency installer
+@echo off
+title Installing Dependencies
+color 0E
+
+echo.
+echo     =========================================
+echo     📦 INSTALLING DEPENDENCIES
+echo     =========================================
+echo.
+
+REM Check if requirements.txt exists
+if not exist "requirements.txt" (
+    echo ❌ requirements.txt not found
+    echo    Creating basic requirements file...
+    
+    echo ultralytics^>=8.0.0 > requirements.txt
+    echo opencv-python^>=4.8.0 >> requirements.txt
+    echo Pillow^>=10.0.0 >> requirements.txt
+    echo matplotlib^>=3.7.0 >> requirements.txt
+    echo numpy^>=1.24.0 >> requirements.txt
+    echo torch^>=2.0.0 >> requirements.txt
+    echo torchvision^>=0.15.0 >> requirements.txt
+    echo psutil^>=5.9.0 >> requirements.txt
+)
+
+echo Installing Python packages...
+pip install -r requirements.txt
+
+if errorlevel 1 (
+    echo.
+    echo ❌ Installation failed
+    echo    Please check your internet connection and try again
+    pause
+    exit /b 1
+) else (
+    echo.
+    echo ✅ All dependencies installed successfully!
+    echo.
+    echo You can now run the application using run_app.bat
+    pause
+)
+
+exit /b 0
