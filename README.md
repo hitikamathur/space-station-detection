@@ -6,7 +6,7 @@ A comprehensive AI-powered object detection system designed specifically for spa
 
 ## Demo Video
 
-**Watch the system in action**: [Space Station Detection Demo](https://youtu.be/Uz2SpVplOig)
+**Watch the system in action**: [Space Station Detection Demo](https://youtu.be/y9YVjFVRF4g)
 
 ## Tech Stack
 
